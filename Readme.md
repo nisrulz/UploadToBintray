@@ -16,6 +16,12 @@ The process is as follows
 
 1. Create and add a new module and choose `Android Library`.
    > Goto `File>New>New Module..` and select `Android Library`.
+   
+   ![newmodule](https://github.com/nisrulz/UploadToBintray/raw/master/img/newmodule.jpeg)
+   
+   ![newlib](https://github.com/nisrulz/UploadToBintray/raw/master/img/newlib.jpeg)
+   
+   ![newlibinfo](https://github.com/nisrulz/UploadToBintray/raw/master/img/newlibinfo.jpeg)
 
 1. Implement your library code inside the library module you created in the last step.
 
@@ -25,6 +31,12 @@ The process is as follows
    > 1. Select the `Dependencies` tab
    > 1. At the bottom is a `+` icon, click that and select `Module dependency` and select your `library` module.
    > 1. Press `apply` or `ok`.
+   
+   ![project](https://github.com/nisrulz/UploadToBintray/raw/master/img/project.jpeg)
+   
+   ![projectstructure](https://github.com/nisrulz/UploadToBintray/raw/master/img/projectstructure.jpeg)
+   
+   ![addmodule](https://github.com/nisrulz/UploadToBintray/raw/master/img/addmodule.jpeg)
    
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
   ```gradle
@@ -82,12 +94,27 @@ The process is as follows
   bintray.apikey=<your_bintray_apikey>
   ```
   
+1. Now lets setup Bintray before we can push our artifact to it.
+  + Register for an account on [bintray.com](https://bintray.com/) and click the activation email they send you.
+  + Add a new Maven repository and click **Create New Package**
+  + You should now have a maven repository. For instance:
+    `https://bintray.com/nisrulz/maven`
+  + Now once you have your maven repo setup , click on **Edit**
+    ![edit](https://github.com/nisrulz/UploadToBintray/raw/master/img/edit.jpeg)
+    
+    and see that you have selected the option `GPG sign uploaded files using Bintray's public/private key pair.`
+    
+    ![gpg](https://github.com/nisrulz/UploadToBintray/raw/master/img/gpg.jpeg)
+    
+  
 1. Once everything is configured, run the below in your terminal in your root of the project
   ```gradle
   ./gradlew install bintrayUpload
   ```
 
 1. Now once your project is up on bintray, simply hit **Add to Jcenter** button to sync with JCenter.
+
+  ![addtojcenter](https://github.com/nisrulz/UploadToBintray/raw/master/img/addtojcenter.jpeg)
 
 1. Your code is available 
    + thorough the private repo at bintray
@@ -101,7 +128,7 @@ The process is as follows
     }
     ```
     
-    + thorough JCenter if you have received the mail with confirmation
+    + through JCenter if you have received the mail with confirmation
     ```gradle
     dependencies {
       compile 'com.github.<bintray_username>:<library_module>:1.0'
@@ -113,6 +140,8 @@ The process is as follows
   > + Add a readme that explains how to integrate and use your Awesome library
   > + Add a license block as in this repo
   > + Also include the Bintray badge provided by Bintray in your readme
+  >
+  >   ![badge](https://github.com/nisrulz/UploadToBintray/raw/master/img/badge.jpeg)
   > + Promote your lib on social media so that others can know about it.
   > + Always add a working sample app in your project that demonstrates your library in use.
   > + Add screenshots if possible in your readme.
