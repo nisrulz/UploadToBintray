@@ -34,7 +34,7 @@ The process is as follows
    
    ![project](https://github.com/nisrulz/UploadToBintray/raw/master/img/project.jpeg)
    
-   ![projectstructure](https://github.com/nisrulz/UploadToBintray/raw/master/img/projectstructure.jpeg)
+   ![prjstruct](https://github.com/nisrulz/UploadToBintray/raw/master/img/prjstruct.jpeg)
    
    ![addmodule](https://github.com/nisrulz/UploadToBintray/raw/master/img/addmodule.jpeg)
    
