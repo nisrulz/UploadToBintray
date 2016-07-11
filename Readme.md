@@ -100,9 +100,10 @@ The process is as follows
   + You should now have a maven repository. For instance:
     `https://bintray.com/nisrulz/maven`
   + Now once you have your maven repo setup , click on **Edit**
+  
     ![edit](https://github.com/nisrulz/UploadToBintray/raw/master/img/edit.jpeg)
     
-    and see that you have selected the option `GPG sign uploaded files using Bintray's public/private key pair.`
+    and see that you have selected the option `GPG sign uploaded files using Bintray's public/private key pair.` and then click **Update**.
     
     ![gpg](https://github.com/nisrulz/UploadToBintray/raw/master/img/gpg.jpeg)
     
