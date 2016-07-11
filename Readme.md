@@ -118,7 +118,7 @@ The process is as follows
   ![addtojcenter](https://github.com/nisrulz/UploadToBintray/raw/master/img/addtojcenter.jpeg)
 
 1. Your code is available 
-   + thorough the private repo at bintray
+   + through the private repo at bintray
     ```gradle
     repositories { 
        jcenter()
