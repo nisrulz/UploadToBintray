@@ -118,7 +118,7 @@ The process is as follows
   ![addtojcenter](https://github.com/nisrulz/UploadToBintray/raw/master/img/addtojcenter.jpeg)
 
 1. Your code is available 
-   + through the private repo at bintray
+  + through the private repo at bintray
     ```gradle
     repositories { 
        jcenter()
@@ -129,13 +129,47 @@ The process is as follows
     }
     ```
     
-    + through JCenter if you have received the mail with confirmation
+    i.e for the sample lib in this repo , `awesomelib`
     ```gradle
+    repositories { 
+       jcenter()
+       maven { url 'https://dl.bintray.com/nisrulz/maven' }
+    }
     dependencies {
-      compile 'com.github.<bintray_username>:<library_module>:1.0'
+      compile 'com.github.nisrulz:awesomelib:1.0'
     }
     ```
     
+  + through JCenter if you have received the mail with confirmation
+
+      ![finalmail](https://github.com/nisrulz/UploadToBintray/raw/master/img/finalmail.jpeg)
+
+    Few things to note when you received the final email.
+      + Goto your maven repo at bintray and verify that you have Jcenter under the **Linked to** section
+
+        ![linked](https://github.com/nisrulz/UploadToBintray/raw/master/img/linked.jpeg)
+
+      + Now you would also want to sync the artifact to [MavenCentral](https://search.maven.org/), for that you need to hit the **Maven Central** tab and sync
+
+        ![synctomaven](https://github.com/nisrulz/UploadToBintray/raw/master/img/synctomaven.jpeg)
+
+      + Once you hit sync you would see as below. Wait for few hours for the sync to occur.
+
+        ![syncstatus](https://github.com/nisrulz/UploadToBintray/raw/master/img/syncstatus.jpeg)
+    
+    You can use the lib now as follows
+    
+    ```gradle
+    dependencies {
+        compile 'com.github.<bintray_username>:<library_module>:1.0'
+      }
+    ```
+    i.e for the sample lib in this repo , `awesomelib`
+    ```gradle
+    dependencies {
+          compile 'com.github.nisrulz:awesomelib:1.0'
+      }
+    ```
 
 1. Let the world know of your **AwesomeLib** :smile:
   > + Add a readme that explains how to integrate and use your Awesome library
