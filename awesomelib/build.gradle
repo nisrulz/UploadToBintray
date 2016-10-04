@@ -14,6 +14,7 @@ ext {
   // Your github repo link
   siteUrl = 'https://github.com/nisrulz/UploadToBintray'
   gitUrl = 'https://github.com/nisrulz/UploadToBintray.git'
+  githubRepository= 'nisrulz/UploadToBintray'
 
   libraryVersion = '1.0'
 
