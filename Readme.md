@@ -8,6 +8,8 @@
 
 Base repository to demonstrate the process of uploading an [`aar`](https://sites.google.com/a/android.com/tools/tech-docs/new-build-system/aar-format)/[`jar`](https://en.wikipedia.org/wiki/JAR_(file_format)) to [JCenter/Bintray](https://bintray.com/).
 
+**Blog Post :** [Guide to publishing your Android Library via Jcenter/Bintray](http://crushingcode.co/publish-your-android-library-via-jcenter/) 
+
 The process is as follows
 
 1. Create an Android project or open an existing one in [Android Studio](https://en.wikipedia.org/wiki/Android_Studio)
