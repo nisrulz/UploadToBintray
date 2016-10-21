@@ -43,12 +43,12 @@ The process is as follows
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
   ```gradle
    dependencies {
-      classpath 'com.android.tools.build:gradle:2.1.2'
+      classpath 'com.android.tools.build:gradle:2.1.3'
       ..
       ..
       // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
-      classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+      classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
       ..
   ```
   
@@ -69,6 +69,7 @@ The process is as follows
      // Your github repo link
      siteUrl = 'https://github.com/nisrulz/UploadToBintray'
      gitUrl = 'https://github.com/nisrulz/UploadToBintray.git'
+     githubRepository= 'nisrulz/UploadToBintray'
    
      libraryVersion = '1.0'
    
@@ -112,7 +113,7 @@ The process is as follows
   
 1. Once everything is configured, run the below in your terminal in your root of the project
   ```gradle
-  ./gradlew install bintrayUpload
+  ./gradlew clean build install bintrayUpload
   ```
 
 1. Now once your project is up on bintray, simply hit **Add to Jcenter** button to sync with JCenter.
