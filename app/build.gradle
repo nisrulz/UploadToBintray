@@ -6,7 +6,7 @@ android {
 
   defaultConfig {
     applicationId "github.nisrulz.sample.uploadtobintray"
-    minSdkVersion 9
+    minSdkVersion 14
     targetSdkVersion 25
     versionCode 1
     versionName "1.0"
@@ -22,7 +22,7 @@ android {
 dependencies {
   compile fileTree(include: ['*.jar'], dir: 'libs')
   testCompile 'junit:junit:4.12'
-  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'com.android.support:appcompat-v7:25.4.0'
   //compile project(':awesomelib')
   compile 'com.github.nisrulz:awesomelib:1.0'
 }
