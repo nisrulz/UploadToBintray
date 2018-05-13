@@ -19,13 +19,14 @@ android {
 }
 
 dependencies {
-  compile fileTree(include: ['*.jar'], dir: 'libs')
-  testCompile 'junit:junit:4.12'
-  compile 'com.android.support:appcompat-v7:27.1.1'
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  implementation 'com.android.support:appcompat-v7:27.1.1'
+
+  testImplementation 'junit:junit:4.12'
 
   // Include library as a module
-  // compile project(':awesomelib')
+  // implementation project(':awesomelib')
 
   // Include library from Jcenter/Bintray repository
-  compile 'com.github.nisrulz:awesomelib:1.0'
+  implementation 'com.github.nisrulz:awesomelib:1.0'
 }
