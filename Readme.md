@@ -44,12 +44,13 @@ The process is as follows
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
   ```gradle
    dependencies {
-      classpath 'com.android.tools.build:gradle:2.1.3'
+      classpath 'com.android.tools.build:gradle:3.1.3'
+
       ..
-      ..
+
       // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-      classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+      classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
       ..
   ```
   
@@ -125,8 +126,9 @@ The process is as follows
   + through the private repo at bintray
     ```gradle
     repositories { 
-       jcenter()
-       maven { url 'https://dl.bintray.com/<bintray_username>/maven' }
+      google()
+      jcenter()
+      maven { url 'https://dl.bintray.com/<bintray_username>/maven' }
     }
     dependencies {
       compile 'com.github.<bintray_username>:<library_module>:1.0'
@@ -136,8 +138,9 @@ The process is as follows
     i.e for the sample lib in this repo , `awesomelib`
     ```gradle
     repositories { 
-       jcenter()
-       maven { url 'https://dl.bintray.com/nisrulz/maven' }
+      google()
+      jcenter()
+      maven { url 'https://dl.bintray.com/nisrulz/maven' }
     }
     dependencies {
       compile 'com.github.nisrulz:awesomelib:1.0'
