@@ -42,129 +42,128 @@ The process is as follows
    ![addmodule](https://github.com/nisrulz/UploadToBintray/raw/master/img/addmodule.jpeg)
    
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
-  ```gradle
-   dependencies {
+    ```gradle
+    dependencies {
       classpath 'com.android.tools.build:gradle:3.5.0-rc02'
-
+    
       ..
-
+    
       // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
       classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
       classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
       ..
-  ```
+    ```
    
 1. Next, apply the `bintray` and `install` plugins at the bottom of build.gradle file at library module level. Also add the ext variable with required information as shown below
-  ```gradle
-   apply plugin: 'com.android.library'
-   
-   ext {
+    ```gradle
+    apply plugin: 'com.android.library'
+    
+    ext {
      bintrayRepo = 'maven'
      bintrayName = 'awesomelib'   // Has to be same as your library module name
-   
+    
      publishedGroupId = 'com.github.nisrulz'
      libraryName = 'AwesomeLib'
      artifact = 'awesomelib'     // Has to be same as your library module name
-   
+    
      libraryDescription = 'Android Library to make any text into Toast with Awesome prepended to the text'
-   
+    
      // Your github repo link
      siteUrl = 'https://github.com/nisrulz/UploadToBintray'
      gitUrl = 'https://github.com/nisrulz/UploadToBintray.git'
      githubRepository= 'nisrulz/UploadToBintray'
-   
+    
      libraryVersion = '1.1'
-   
+    
      developerId = 'nisrulz'
      developerName = 'Nishant Srivastava'
      developerEmail = 'nisrulz@gmail.com'
-   
+    
      licenseName = 'The Apache Software License, Version 2.0'
      licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
      allLicenses = ["Apache-2.0"]
-   }
-   
-   ..
-   ..
-   
-   // Place it at the end of the file
-   apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
-   apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
-   
-  ```  
+    }
+    
+    ..
+    ..
+    
+    // Place it at the end of the file
+    apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
+    
+    ```  
 
 1. Edit your `local.properties`
-  ```
-  bintray.user=<your_bintray_username>
-  bintray.apikey=<your_bintray_apikey>
-  ```
+    ```
+    bintray.user=<your_bintray_username>
+    bintray.apikey=<your_bintray_apikey>
+    ```
   
 1. Now lets setup Bintray before we can push our artifact to it.
-  + Register for an account on [bintray.com](https://bintray.com/) and click the activation email they send you.
-  + Add a new Maven repository and click **Create New Package**
-  + You should now have a maven repository. For instance:
-    `https://bintray.com/nisrulz/maven`
-  + Now once you have your maven repo setup , click on **Edit**
-  
-    ![edit](https://github.com/nisrulz/UploadToBintray/raw/master/img/edit.jpeg)
+    + Register for an account on [bintray.com](https://bintray.com/) and click the activation email they send you.
+    + Add a new Maven repository and click **Create New Package**
+    + You should now have a maven repository. For instance:
+        `https://bintray.com/nisrulz/maven`
+    + Now once you have your maven repo setup , click on **Edit**
+        ![edit](https://github.com/nisrulz/UploadToBintray/raw/master/img/edit.jpeg)
     
     and see that you have selected the option `GPG sign uploaded files using Bintray's public/private key pair.` and then click **Update**.
-    
-    ![gpg](https://github.com/nisrulz/UploadToBintray/raw/master/img/gpg.jpeg)
+        ![gpg](https://github.com/nisrulz/UploadToBintray/raw/master/img/gpg.jpeg)
     
   
 1. Once everything is configured, run the below in your terminal in your root of the project
-  ```gradle
-  ./gradlew clean build install bintrayUpload
-  ```
+    ```gradle
+    ./gradlew clean build install bintrayUpload
+    ```
 
 1. Now once your project is up on bintray, simply hit **Add to Jcenter** button to sync with JCenter.
 
-  ![addtojcenter](https://github.com/nisrulz/UploadToBintray/raw/master/img/addtojcenter.jpeg)
+    ![addtojcenter](https://github.com/nisrulz/UploadToBintray/raw/master/img/addtojcenter.jpeg)
 
 1. Your code is available 
-  + through the private repo at bintray
-    ```gradle
-    repositories { 
-      google()
-      jcenter()
-      maven { url 'https://dl.bintray.com/<bintray_username>/maven' }
-    }
-    dependencies {
-      compile 'com.github.<bintray_username>:<library_module>:1.1'
-    }
-    ```
+    + through the private repo at bintray
+        ```gradle
+        repositories { 
+          google()
+          jcenter()
+          maven { url 'https://dl.bintray.com/<bintray_username>/maven' }
+        }
+        dependencies {
+          compile 'com.github.<bintray_username>:<library_module>:1.1'
+        }
+        ```
     
-    i.e for the sample lib in this repo , `awesomelib`
-    ```gradle
-    repositories { 
-      google()
-      jcenter()
-      maven { url 'https://dl.bintray.com/nisrulz/maven' }
-    }
-    dependencies {
-      compile 'com.github.nisrulz:awesomelib:1.1'
-    }
-    ```
+        i.e for the sample lib in this repo , `awesomelib`
+        ```gradle
+        repositories { 
+          google()
+          jcenter()
+          maven { url 'https://dl.bintray.com/nisrulz/maven' }
+        }
+        dependencies {
+          compile 'com.github.nisrulz:awesomelib:1.1'
+        }
+        ```
     
-  + through JCenter if you have received the mail with confirmation
-
-      ![finalmail](https://github.com/nisrulz/UploadToBintray/raw/master/img/finalmail.jpeg)
-
-    Few things to note when you received the final email.
-      + Goto your maven repo at bintray and verify that you have Jcenter under the **Linked to** section
-
-        ![linked](https://github.com/nisrulz/UploadToBintray/raw/master/img/linked.jpeg)
-
-      + Now you would also want to sync the artifact to [MavenCentral](https://search.maven.org/), for that you need to hit the **Maven Central** tab and sync
-
-        ![synctomaven](https://github.com/nisrulz/UploadToBintray/raw/master/img/synctomaven.jpeg)
-
-      + Once you hit sync you would see as below. Wait for few hours for the sync to occur.
-
-        ![syncstatus](https://github.com/nisrulz/UploadToBintray/raw/master/img/syncstatus.jpeg)
+    + through JCenter if you have received the mail with confirmation
     
-    You can use the lib now as follows
+        ![finalmail](https://github.com/nisrulz/UploadToBintray/raw/master/img/finalmail.jpeg)
+    
+1. Few things to note when you received the final email.
+      
+  + Goto your maven repo at bintray and verify that you have Jcenter under the **Linked to** section
+
+    ![linked](https://github.com/nisrulz/UploadToBintray/raw/master/img/linked.jpeg)
+
+  + Now you would also want to sync the artifact to [MavenCentral](https://search.maven.org/), for that you need to hit the **Maven Central** tab and sync
+
+    ![synctomaven](https://github.com/nisrulz/UploadToBintray/raw/master/img/synctomaven.jpeg)
+
+  + Once you hit sync you would see as below. Wait for few hours for the sync to occur.
+
+    ![syncstatus](https://github.com/nisrulz/UploadToBintray/raw/master/img/syncstatus.jpeg)
+    
+1. You can use the lib now as follows
     
     ```gradle
     dependencies {
@@ -179,15 +178,16 @@ The process is as follows
     ```
 
 1. Let the world know of your **AwesomeLib** :smile:
-  > + Add a readme that explains how to integrate and use your Awesome library
-  > + Add a license block as in this repo
-  > + Also include the Bintray badge provided by Bintray in your readme
-  >
-  >   ![badge](https://github.com/nisrulz/UploadToBintray/raw/master/img/badge.jpeg)
-  > + Promote your lib on social media so that others can know about it.
-  > + Always add a working sample app in your project that demonstrates your library in use.
-  > + Add screenshots if possible in your readme.
+    + Add a readme that explains how to integrate and use your Awesome library
+    + Add a license block as in this repo
+    + Also include the Bintray badge provided by Bintray in your readme
+   
+      ![badge](https://github.com/nisrulz/UploadToBintray/raw/master/img/badge.jpeg)
+    + Promote your lib on social media so that others can know about it.
+    + Always add a working sample app in your project that demonstrates your library in use.
+    + Add screenshots if possible in your readme
 
+-
 
 > If you found this example helpful or you learned something today and want to thank me, consider buying me a cup of :coffee:
 >  + [PayPal](https://www.paypal.me/nisrulz/5usd)
