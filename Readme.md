@@ -44,16 +44,16 @@ The process is as follows
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
   ```gradle
    dependencies {
-      classpath 'com.android.tools.build:gradle:3.1.3'
+      classpath 'com.android.tools.build:gradle:3.5.0-rc02'
 
       ..
 
       // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
       classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
       ..
   ```
-  
+   
 1. Next, apply the `bintray` and `install` plugins at the bottom of build.gradle file at library module level. Also add the ext variable with required information as shown below
   ```gradle
    apply plugin: 'com.android.library'
@@ -73,7 +73,7 @@ The process is as follows
      gitUrl = 'https://github.com/nisrulz/UploadToBintray.git'
      githubRepository= 'nisrulz/UploadToBintray'
    
-     libraryVersion = '1.0'
+     libraryVersion = '1.1'
    
      developerId = 'nisrulz'
      developerName = 'Nishant Srivastava'
@@ -131,7 +131,7 @@ The process is as follows
       maven { url 'https://dl.bintray.com/<bintray_username>/maven' }
     }
     dependencies {
-      compile 'com.github.<bintray_username>:<library_module>:1.0'
+      compile 'com.github.<bintray_username>:<library_module>:1.1'
     }
     ```
     
@@ -143,7 +143,7 @@ The process is as follows
       maven { url 'https://dl.bintray.com/nisrulz/maven' }
     }
     dependencies {
-      compile 'com.github.nisrulz:awesomelib:1.0'
+      compile 'com.github.nisrulz:awesomelib:1.1'
     }
     ```
     
@@ -168,13 +168,13 @@ The process is as follows
     
     ```gradle
     dependencies {
-        compile 'com.github.<bintray_username>:<library_module>:1.0'
+        compile 'com.github.<bintray_username>:<library_module>:1.1'
       }
     ```
     i.e for the sample lib in this repo , `awesomelib`
     ```gradle
     dependencies {
-          compile 'com.github.nisrulz:awesomelib:1.0'
+          compile 'com.github.nisrulz:awesomelib:1.1'
       }
     ```
 
@@ -191,7 +191,6 @@ The process is as follows
 
 > If you found this example helpful or you learned something today and want to thank me, consider buying me a cup of :coffee:
 >  + [PayPal](https://www.paypal.me/nisrulz/5usd)
->  + Bitcoin Address: 13PjuJcfVW2Ad81fawqwLtku4bZLv1AxCL
 
 License
 =======
