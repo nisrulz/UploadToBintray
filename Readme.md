@@ -189,10 +189,8 @@ The process is as follows
     + Always add a working sample app in your project that demonstrates your library in use.
     + Add screenshots if possible in your readme
 
--
 
-> If you found this example helpful or you learned something today and want to thank me, consider buying me a cup of :coffee:
->  + [PayPal](https://www.paypal.me/nisrulz/5usd)
+If you appreciate my work, consider [buying me](https://www.paypal.me/nisrulz/5usd) a cup of :coffee: to keep me recharged :metal: [[PayPal](https://www.paypal.me/nisrulz/5usd)]
 
 License
 =======
