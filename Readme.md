@@ -44,7 +44,7 @@ The process is as follows
 1. Once project is synced, add the required plugins to classpath in build.gradle file at root project level, as shown below
     ```gradle
     dependencies {
-      classpath 'com.android.tools.build:gradle:4.0.0'
+      classpath 'com.android.tools.build:gradle:4.0.1'
     
       ..
     
