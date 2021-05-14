@@ -1,7 +1,8 @@
 # Upload to JCenter/Bintray
 
-### Specs
-[ ![Download](https://api.bintray.com/packages/nisrulz/maven/awesomelib/images/download.svg) ](https://bintray.com/nisrulz/maven/awesomelib/_latestVersion)
+## _This repository is no longer maintained_
+
+[Jcenter has been sunset](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/). It is encouraged to publish to [MavenCentral](https://search.maven.org/).
 
 ### Show some :heart:
 [![GitHub stars](https://img.shields.io/github/stars/nisrulz/UploadToBintray.svg?style=social&label=Star)](https://github.com/nisrulz/UploadToBintray) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/UploadToBintray.svg?style=social&label=Fork)](https://github.com/nisrulz/UploadToBintray/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/UploadToBintray.svg?style=social&label=Watch)](https://github.com/nisrulz/UploadToBintray) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz/UploadToBintray)  
